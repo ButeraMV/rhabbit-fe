@@ -9,8 +9,7 @@ class UsersContainer extends Component {
     super(props)
     this.state = {
       users: [],
-      editingUserId: null,
-      notification: ''
+      editingUserId: null
     }
   }
 
@@ -55,13 +54,8 @@ class UsersContainer extends Component {
     })
     this.setState({
       users: users,
-      editingUserId: null,
-      notification: 'All changes saved'
+      editingUserId: null
     })
-  }
-
-  resetNotification = () => {
-    this.setState({notification: ''})
   }
 
   enableEditing = (id) => {
@@ -82,9 +76,6 @@ class UsersContainer extends Component {
   render() {
     return (
       <div>
-        <span className="notification">
-          {this.state.notification}
-        </span>
         <button className="newUserButton" onClick={this.addNewUser} >
           New User
         </button>
@@ -93,8 +84,7 @@ class UsersContainer extends Component {
           if(this.state.editingUserId === user.id) {
             return(<UserForm user={user} key={user.id}
                     updateUser={this.updateUser}
-                    firstNameRef= {input => this.first_name = input}
-                    resetNotification={this.resetNotification} />)
+                    firstNameRef= {input => this.first_name = input} />)
           } else {
             return (<User user={user} key={user.id}
                     onClick={this.enableEditing}

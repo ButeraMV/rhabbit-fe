@@ -15,10 +15,11 @@ class User extends Component {
         <span className="deleteButton" onClick={this.handleDelete}>
           x
         </span>
-        <h4 onClick={this.handleClick}>
+        <h4>
           {this.props.user.first_name + " " + this.props.user.last_name}
         </h4>
         <p>{this.props.user.title}</p>
+        <button onClick={this.handleClick}>Edit</button>
       </div>
     )
   }

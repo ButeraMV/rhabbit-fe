@@ -13,11 +13,12 @@ class UserForm extends Component {
   }
 
   handleInput = (e) => {
-    this.props.resetNotification()
     this.setState({[e.target.name]: e.target.value})
+
   }
 
-  handleBlur = () => {
+  handleClick = (e) => {
+    e.preventDefault()
     const user = {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
@@ -40,7 +41,7 @@ class UserForm extends Component {
   render() {
     return (
       <div className="tile">
-        <form onBlur={this.handleBlur}>
+        <form>
           <input className='input' type="text"
             name="first_name" placeholder='First Name'
             value={this.state.first_name} onChange={this.handleInput}
@@ -54,6 +55,7 @@ class UserForm extends Component {
           <input className='input' type="text"
             name="manager_id" placeholder='Manager ID'
             value={this.state.manager_id} onChange={this.handleInput} />
+          <button onClick={this.handleClick}>Submit</button>
         </form>
       </div>
     );

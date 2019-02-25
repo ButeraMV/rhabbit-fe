@@ -3,31 +3,24 @@ body {
   text-align: center;
 }
 
-.App-header {
-  text-align: center;
-
-}
-
-.App-intro {
-  font-size: large;
-}
-
 .tile {
   width: 300px;
-  background-color: yellow;
+  background-color: darkgrey;
   color: black;
-  margin: 10px auto;
+  margin: 10px 20px;
+  padding: 10px 0;
   text-align: center;
-  padding: 20px 0;
+  display: inline-block;
 }
 
 .newUserButton {
+  display: block;
   background: darkblue;
   color: white;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  margin: 10px;
+  margin: 10px auto;
   padding:10px;
 }
 
